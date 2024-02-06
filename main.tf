@@ -210,4 +210,5 @@ resource "aws_instance" "db" {
    tags = {
        Name = "DB Server - NEELA"
    }
-  
+  }
+
