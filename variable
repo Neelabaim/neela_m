@@ -1,0 +1,23 @@
+variable "vpc_cidr" {
+  default     = "10.0.0.0/16"
+}
+
+variable "subnet1_cidr" {
+  default     = "10.0.0.0/24"
+}
+
+variable "subnet2_cidr" {
+  default     = "10.0.1.0/24"
+}
+
+variable "amiid" {
+   default = "ami-03f4878755434977f"
+}
+
+variable "type" {
+   default = "t2.medium"
+}
+
+variable "pemfile" {
+   default = "master"
+}
