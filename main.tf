@@ -186,8 +186,8 @@ resource "aws_security_group" "db" {
 
   # Inbound for SSH
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     security_groups = [aws_security_group.instance.id]
   }
@@ -198,8 +198,8 @@ resource "aws_security_group" "db" {
 # Create EC2 DB Server
 #---------------------
 resource "aws_instance" "db" {
-   ami           = var.amiid
-   instance_type = var.type
+   ami           = ami-03f4878755434977f
+   instance_type = t2.medium
    key_name      = nee_m.pem
    vpc_security_group_ids = [aws_security_group.db.id]
    subnet_id = aws_subnet.private_ap_south_1b.id
