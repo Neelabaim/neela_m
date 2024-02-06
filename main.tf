@@ -112,8 +112,8 @@ resource "aws_security_group" "instance" {
 # Create EC2 Server
 #------------------
 resource "aws_instance" "server" {
-   ami           = var.amiid
-   instance_type = var.type
+   ami           = ami-03f4878755434977f
+   instance_type = t2.medium
    key_name      = neela_m.pem
    vpc_security_group_ids = [aws_security_group.instance.id]
    subnet_id = aws_subnet.public_ap_south_1a.id
