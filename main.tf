@@ -114,7 +114,7 @@ resource "aws_security_group" "instance" {
 resource "aws_instance" "server" {
    ami           = var.amiid
    instance_type = var.type
-   key_name      = var.pemfile
+   key_name      = neela_m.pem
    vpc_security_group_ids = [aws_security_group.instance.id]
    subnet_id = aws_subnet.public_ap_south_1a.id
    availability_zone = data.aws_availability_zones.all.names[0]
